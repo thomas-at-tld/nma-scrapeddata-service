@@ -8,7 +8,7 @@ pip install Flask flask-restful pymongo
 docker build --build-arg MONGO_HOST=host.docker.internal --build-arg MONGO_USERNAME=admin --build-arg MONGO_PASSWORD=nmaMongoPw -t nma-scrapeddata-service .
 
 # Build docker image for aws testing
-docker build --build-arg MONGO_HOST=ec2-13-50-237-26.eu-north-1.compute.amazonaws.com --build-arg MONGO_USERNAME=admin --build-arg MONGO_PASSWORD=2m2oA5Bd3aTjqar3 -t nma-scrapeddata-service .
+docker build --build-arg MONGO_HOST=ec2-51-20-253-180.eu-north-1.compute.amazonaws.com --build-arg MONGO_USERNAME=admin --build-arg MONGO_PASSWORD=2m2oA5Bd3aTjqar3 -t nma-scrapeddata-service .
 
 # Start docker container
 docker run -p6000:6000 --net nma-microservices --add-host=host.docker.internal:host-gateway --name nma-scrapeddata-service nma-scrapeddata-service:latest
@@ -20,7 +20,7 @@ export MONGO_PASSWORD=nmaMongoPw
 python3 app.py
 
 # Run application from command line and interact with aws mongodb
-export MONGO_HOST=ec2-13-50-237-26.eu-north-1.compute.amazonaws.com
+export MONGO_HOST=ec2-51-20-253-180.eu-north-1.compute.amazonaws.com
 export MONGO_USERNAME=admin
 export MONGO_PASSWORD=2m2oA5Bd3aTjqar3
 python3 app.py
